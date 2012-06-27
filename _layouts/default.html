@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
+	<title>{{site.title}} - {{page.title}}</title>
+  
+	{% if page.description %}
+		<meta name="description" content="{{ page.description }}">
+	{% else %}
+		<meta name="description" content="{{ site.description }}">
+	{% endif %}
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="/assets/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/assets/stylesheets/app.css">
+	
+	<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+	
+	<style>
+		h1 {
+			font-family: 'Monofett';
+			font-weight: normal;
+			text-transform: lowercase;
+		}
+	</style>
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
+	
+	<script src="/assets/javascripts/modernizr.foundation.js"></script>
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	<!-- container -->
+	<div class="container">
+
+		<div class="row">
+			<div class="eight columns centered">
+				<h1><a href="/{{ page.categories }}"># {{page.title}}</a></h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="eight columns centered">
+				
+				<p><a href="http://www.flickr.com/photos/joi/4670781482/" title="Bassel by Joi, on Flickr"><img src="http://farm5.staticflickr.com/4018/4670781482_d072301ef0.jpg" width="500" height="333" alt="Bassel"></a></p>
+
+				<dl class="nice contained tabs">
+					<dd><a href="#english" class="active">English</a></dd>
+					<dd><a href="#arabic" dir="rtl">العربية</a></dd>
+				</dl>
+
+				<ul class="nice tabs-content contained">
+					<li class="active" id="englishTab">
+						{% for page in site.categories.en limit:1%}
+
+		  					{{ page.content }}
+		  
+						{% endfor %}
+					</li>
+					<li id="arabicTab" dir="rtl">
+						{% for page in site.categories.ar limit:1%}
+
+		  					{{ page.content }}
+		  
+						{% endfor %}
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		
+		<div class="row">
+			<div class="eight columns centered">
+				<div class="panel">
+					<h5>Sign the Letter</h5>
+					<p>I support the immediate release of detained software engineer and web pioneer, Bassel Khartabil (Bassel Safadi) from detainment in Syria.</p>
+				</div>
+			</div>
+
+		</div>
+		
+
+	</div>
+	<!-- container -->
+
+
+
+
+	<!-- Included JS Files -->
+	<script src="/assets/javascripts/jquery.min.js"></script>
+	<script src="/assets/javascripts/foundation.js"></script>
+	<script src="/assets/javascripts/app.js"></script>
+
+</body>
+</html>
