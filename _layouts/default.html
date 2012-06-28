@@ -18,18 +18,25 @@
 	{% else %}
 		<meta name="description" content="{{ site.description }}">
 	{% endif %}
+	
+		{% if page.tags %}
+		<meta name="keywords" content="{{page.tags | join: ', '}}" />
+		{% else %}
+		<meta name="keywords" content="{{site.keywords | join: ', '}}" />
+		{% endif %}
   
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="/assets/stylesheets/foundation.css">
 	<link rel="stylesheet" href="/assets/stylesheets/app.css">
 	
-	<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
-	
 	<style>
 		h1 {
-			font-family: 'Monofett';
+			font-family: 'sans-serif';
 			font-weight: normal;
-			text-transform: lowercase;
+		}
+		
+		.caption {
+			text-align: right;
 		}
 	</style>
 
@@ -51,15 +58,17 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="eight columns centered">
-				<h1><a href="/{{ page.categories }}"># {{page.title}}</a></h1>
+			<div class="nine columns centered">
+				<h1><a href="/{{ page.categories }}">#{{page.title}}</a></h1>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="eight columns centered">
+			<div class="nine columns centered">
 				
-				<p><a href="http://www.flickr.com/photos/joi/4670781482/" title="Bassel by Joi, on Flickr"><img src="http://farm5.staticflickr.com/4018/4670781482_d072301ef0.jpg" width="500" height="333" alt="Bassel"></a></p>
+				<p><a href="http://www.flickr.com/photos/joi/4670781482/" title="Bassel by Joi, on Flickr"><img src="http://farm5.staticflickr.com/4018/4670781482_d072301ef0_b_d.jpg" width="100%" alt="Bassel"></a></p>
+				
+				<p class="caption"><a href="http://www.flickr.com/photos/joi/4670781482/">Bassel</a> by <a href="http://www.flickr.com/photos/joi/">Joi Ito</a>, on Flickr
 
 				<dl class="nice contained tabs">
 					<dd><a href="#english" class="active">English</a></dd>
@@ -87,13 +96,24 @@
 		</div>
 		
 		<div class="row">
-			<div class="eight columns centered">
+			<div class="nine columns centered">
 				<div class="panel">
 					<h5>Sign the Letter</h5>
-					<p>I support the immediate release of detained software engineer and web pioneer, Bassel Khartabil (Bassel Safadi) from detainment in Syria.</p>
 				</div>
 			</div>
 
+		</div>
+		
+		<div class="row">
+			<div class="nine columns centered">
+				{% include support-form.html %}
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="nine columns centered">
+				{% include spreadsheet.html %}
+			</div>
 		</div>
 		
 
@@ -107,6 +127,13 @@
 	<script src="/assets/javascripts/jquery.min.js"></script>
 	<script src="/assets/javascripts/foundation.js"></script>
 	<script src="/assets/javascripts/app.js"></script>
+
+	<script>
+		var _gaq=[['_setAccount','UA-742868-6'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
 
 </body>
 </html>
