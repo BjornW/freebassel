@@ -1,9 +1,3 @@
----
-layout: default
-title: Campaign
-description: "#FREEBASSEL campaign launched to bring home loved and celebrated internet volunteer detained in syria"
----
-
 On March  15, 2012, Bassel Khartabil was detained in a wave of arrests in the Mazzeh district of Damascus. Since then, his family has received no official explanation for his detention or information regarding his whereabouts. However, his family has recently learned from previous detainees at the security branch of Kafer Sousa, Damascus, that Bassel is being held at this location. 
 
 Bassel Khartabil, a Palestinian-born Syrian, 31, is a respected computer engineer specializing in open source software development, the type of contributions the Internet is built upon. He launched his career ten years ago in Syria, working as a technical director for a number of local companies on cultural projects like restoring Palmyra and Forward Syria Magazine. 
