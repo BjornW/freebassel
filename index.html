@@ -27,7 +27,7 @@ title: HOME
 				  {% endcapture %}
 				  {{ english_letter | unindent | markdownify }}
 			</li>
-			<li class="active" id="françaisTab">
+			<li id="françaisTab">
 				  {% capture french_letter %}
 					{% include letter-french.md %}
 				  {% endcapture %}
@@ -72,6 +72,9 @@ title: HOME
 	<div class="nine columns centered">
 		<h5>About</h5>
 		{% include about.html %}
+		
+		<h5>Press Release</h5>
+		{% include press.html %}
 		
 		<h5>Contact</h5>
 		<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
