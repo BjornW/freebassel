@@ -70,18 +70,19 @@ title: HOME
 
 <div class="row">
 	<div class="nine columns centered">
-		<h5>About</h5>
-		{% include about.html %}
+		<div class="panel">
+			<h5>In the News</h5>
+		</div>
 		
-		<h5>Press Release</h5>
-		{% include press.html %}
+		<table style="width:100%">
+		{% for post in site.categories.press limit:5 %}
+
+		<tr><td>{{ post.date | date: "%b&nbsp;%d" }}</td><td><a href="{{post.link}}"><strong>{{post.title}}</strong></a> <small>by {{ post.source }}</small></td></tr>
 		
-		<h5>Contact</h5>
-		<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+		{% endfor %}
+		</table>
 		
-		<h5>Follow</h5>
-		<p><a href="http://www.facebook.com/{{ site.facebook }}">{{ site.facebook }} on Facebook</a></p>
-		<p><a href="https://twitter.com/{{ site.twitter }}">@{{ site.twitter }} on Twitter</a></p>
-		<p>Use the #freebassel hashtag in social media.</p>
+		<p><a href="/press">Read all {{ site.categories.press | size }} news stories...</a></p>
+		
 	</div>
 </div>

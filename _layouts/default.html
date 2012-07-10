@@ -50,13 +50,31 @@
 
 		<div class="row">
 			<div class="nine columns centered title">
-				<h1><a href="/{{ page.categories }}">#{{site.title}}</a></h1>
+				<h1><a href="/">#{{site.title}}</a></h1>
 			</div>
 		</div>
 
 		{{ content }}
 		
 		<footer>
+		
+			<div class="row">
+				<div class="nine columns centered">
+					<h5>About</h5>
+					{% include about.html %}
+
+					<h5>Press Release</h5>
+					{% include press.html %}
+
+					<h5>Contact</h5>
+					<p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+					<h5>Follow</h5>
+					<p><a href="http://www.facebook.com/{{ site.facebook }}">{{ site.facebook }} on Facebook</a></p>
+					<p><a href="https://twitter.com/{{ site.twitter }}">@{{ site.twitter }} on Twitter</a></p>
+					<p>Use the #freebassel hashtag in social media.</p>
+				</div>
+			</div>
 		
 		</footer>
 		

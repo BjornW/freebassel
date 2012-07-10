@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="row">
+	<div class="nine columns centered">
+	
+	<p>Date: {{ page.date | date: "%d %B %Y" }}</p>
+	<p>Source: <a href="{{ page.link }}">{{ page.source }}</a></p>
+	<p>Filed under: <a href="/{{ page.categories }}">{{ page.categories }}</a></p>
+	
+	<hr/>
+	
+	<article>
+		{{ content }}
+	</article>
+	
+	<hr/>
+	
+	</div>
+</div>
